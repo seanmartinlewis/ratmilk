@@ -36,6 +36,7 @@ div.content{
   flex-direction:  column;
   padding-bottom: 100px;
   padding-top: 100px;
+  margin: 0 auto;
 }
 
 div.pictures, div.vids, div.music, div.contact{
