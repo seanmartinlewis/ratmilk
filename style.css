@@ -1,0 +1,247 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: Codystar;
+    margin: 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+a.nav {
+  color: black;
+  text-decoration: none;
+  font-family: Vibur;
+  font-size: 18px;
+  padding-left: 25px;
+}
+
+a.nav:hover {
+  text-decoration: underline;
+}
+
+h1{
+  color: black;
+}
+
+#title {
+  padding-left: 20px;
+  margin-bottom: 0px;
+}
+
+div.content{
+  width: 100%;
+  display: flex;
+  flex-direction:  column;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+div.pictures, div.vids, div.music, div.contact{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0px;
+}
+div.image {
+  padding: 20px;
+  height: 150px;
+  width: 300px;
+  background-size: cover;
+  background-position: center center;
+  padding: 30px;
+  text-decoration: none !important;
+  margin: 10px;
+  border: 1px solid #C1C1C1;
+  border-radius: 2px;
+}
+
+iframe{
+  margin: 10px;
+}
+
+h3, h4 {
+  margin: 10px;
+}
+
+div.nav {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+}
+
+div.contact {
+  background-image: url(images/shahan-idea.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: Codystar;
+  font-size: 20px;
+  color: white;
+}
+
+div.icons {
+  text-align: center;
+  font-size: 40px;
+  padding: 30px 0px;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+i {
+  margin: 20px 100px;
+}
+
+div.footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid lightgrey;
+}
+
+h5 {
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin-bottom: 0px;
+}
+
+p.footCon {
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+div.shows {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  color: grey;
+  padding-bottom: 200px;
+}
+
+a.shows {
+  color: black;
+  margin: 3px 0px;
+  text-decoration: none;
+}
+a.shows:hover {
+  text-decoration: underline;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+#modalImg {
+  height: 500px;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+    #modalImg {
+      width: 100%;
+      height: auto;
+    }
+}
+
+
+div.modal-body {
+  text-align: center;
+}
