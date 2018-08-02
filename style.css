@@ -1,7 +1,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    font-family: Codystar;
+    font-family: times;
     margin: 0px;
 }
 
@@ -12,9 +12,10 @@ ul{
 a.nav {
   color: black;
   text-decoration: none;
-  font-family: Vibur;
-  font-size: 18px;
-  padding-left: 25px;
+  font-family: times;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 a.nav:hover {
@@ -28,6 +29,8 @@ h1{
 #title {
   padding-left: 20px;
   margin-bottom: 0px;
+  margin-top: 10px;
+  font-family: sans-serif;
 }
 
 div.content{
@@ -36,7 +39,7 @@ div.content{
   flex-direction:  column;
   padding-bottom: 100px;
   padding-top: 100px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 div.pictures, div.vids, div.music, div.contact{
@@ -45,7 +48,8 @@ div.pictures, div.vids, div.music, div.contact{
   flex-direction: column;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 0px;
+  padding: 0px 0px;
+  padding-top: 5%;
 }
 div.image {
   padding: 20px;
@@ -83,7 +87,6 @@ div.contact {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 100px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -135,17 +138,19 @@ div.shows {
   flex-direction: column;
   letter-spacing: 1.5px;
   font-size: 18px;
-  color: grey;
-  padding-bottom: 200px;
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
 
 a.shows {
   color: black;
   margin: 3px 0px;
   text-decoration: none;
+  font-family: sans-serif;
 }
 a.shows:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Style the Image Used to Trigger the Modal */
@@ -190,6 +195,19 @@ a.shows:hover {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+}
+
+div.flyers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fly-image {
+    max-height: 300px;
+    margin: 20px;
+    width: auto%;
 }
 
 /* Add Animation - Zoom in the Modal */
