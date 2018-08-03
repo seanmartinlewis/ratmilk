@@ -9,13 +9,23 @@ ul{
   list-style: none;
 }
 
+div.nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav {
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+
 a.nav {
   color: black;
   text-decoration: none;
-  font-family: times;
-  font-size: 14px;
-  padding-top: 10px;
-  padding-left: 20px;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding-left: 15px;
 }
 
 a.nav:hover {
@@ -42,7 +52,7 @@ div.content{
   /* margin: 0 auto; */
 }
 
-div.pictures, div.vids, div.music, div.contact{
+div.pictures, div.vids, div.music {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -51,6 +61,15 @@ div.pictures, div.vids, div.music, div.contact{
   padding: 0px 0px;
   padding-top: 5%;
 }
+div.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 0px;
+}
+
 div.image {
   padding: 20px;
   height: 150px;
@@ -100,6 +119,7 @@ div.icons {
   font-size: 40px;
   padding: 30px 0px;
   color: white;
+  cursor: pointer;
 }
 
 a {
