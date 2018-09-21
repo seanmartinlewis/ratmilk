@@ -17,13 +17,12 @@ div.nav {
 
 nav {
     padding-bottom: 5px;
-    padding-left: 30px;
 }
 
 a.nav {
   color: black;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: times;
   font-size: 12px;
   padding-left: 15px;
 }
@@ -37,7 +36,7 @@ h1{
 }
 
 #title {
-  padding-left: 20px;
+  padding-left: 10px;
   margin-bottom: 0px;
   margin-top: 10px;
   font-family: sans-serif;
@@ -152,12 +151,15 @@ p.footCon {
   font-size: 16px;
 }
 
+p.show-title {
+    font-size: 18px;
+}
 div.shows {
   text-align: center;
   display: flex;
   flex-direction: column;
-  letter-spacing: 1.5px;
-  font-size: 18px;
+  /* letter-spacing: 1.5px; */
+  font-size: 12px;
   padding-bottom: 5%;
   padding-top: 5%;
 }
