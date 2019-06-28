@@ -11,6 +11,23 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Codystar|Vibur|Pirata+One|Ewert" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/1.1.4/angularfire.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDbdVrXjaQgXPnltlAgg8EGd4UU1SEKnts",
+        authDomain: "ratmilk-af4d2.firebaseapp.com",
+        databaseURL: "https://ratmilk-af4d2.firebaseio.com/",
+        projectId: "ratmilk-af4d2",
+        storageBucket: "ratmilk-af4d2.appspot.com",
+        messagingSenderId: "828774142050",
+        appId: "1:828774142050:web:54ff9ea314f5ec4f"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="script.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -83,6 +100,9 @@
       <div id="shows" class="shows">
 
         <p class="show-title">upcoming shows</p>
+        <div ng-repeat="show in shows" ng-if="show.display == true" class="">
+            <a class="shows" target="_blank" href="{{show.link}}">{{show.title}} :: {{show.date}} :: {{show.venue}} :: {{show.time}}</a>
+        </div>
 
         <!-- <a class="shows" target="_blank" href="https://2019.do512.com/strangebrew">SXSW :: 3-11-2019 :: STRANGE BREW at HOTEL VEGAS :: 7:00PM</a>
         <a class="shows" target="_blank" href="https://www.whereisthehideout.com/">SXSW :: 3-13-2019 :: WHERE IS THE HIDEOUT at SAMS TOWN POINT :: 4:00PM </a>
@@ -218,9 +238,26 @@
               <img alt="rattlesnake milk" title="rattlesnake milk the band" style="height: auto; width:100%; margin-bottom:10px;" src="images/ratmilkghost.jpg"></img>
               <img alt="rattlesnake milk" title="rattlesnake milk the band" style="height: auto; width:100%; margin-bottom:10px;" src="images/rattlesnakemilk3.jpg"></img>
               <img alt="rattlesnake milk" title="rattlesnake milk the band and joe ely" style="height: auto; width:100%; margin-bottom:10px;" src="images/rattlesnakemilkandjoeely.jpg"></img>
-              <img alt="rattlesnake milk" title="rattlesnake milk cover" style="height: auto; width:100%; margin-bottom:10px;" src="images/rattlesnakemilkcover.jpg"></img>
+              <img ng-click="showPassword()" alt="rattlesnake milk" title="rattlesnake milk cover" style="height: auto; width:100%; margin-bottom:10px;" src="images/rattlesnakemilkcover.jpg">
+              <div ng-show="password == true" class="password">
+                  <form ng-submit="showForm()" class="">
+                      <input ng-model="data.pass" type="text" name="" placeholder="PASSWORD" value="">
+                      <button type="submit" name="button">ENTER PASSWORD</button>
+                  </form>
+              </div>
+              </img>
 
       </div>
+    </div>
+    <div ng-show="showTheForm == true" class="showForm">
+        <form ng-submit="postShow()" class="">
+            <input ng-model="data.newShow.date" type="text" name="" placeholder="Date" value="">
+            <input ng-model="data.newShow.link" type="text" name="" placeholder="Link" value="">
+            <input ng-model="data.newShow.title" type="text" name="" placeholder="Title" value="">
+            <input ng-model="data.newShow.time" type="text" name="" placeholder="Time" value="">
+            <input ng-model="data.newShow.venue" type="text" name="" placeholder="Venue" value="">
+            <button type="submit" name="button">POST SHOW</button>
+        </form>
     </div>
 
     <!-- <div class="footer">
@@ -239,30 +276,30 @@
           </div>
   </div>
 
-  <script type="text/javascript">
-    var modal = document.getElementById('myModal');
+    <script type="text/javascript">
+        var modal = document.getElementById('myModal');
 
-    function changeImage(a) {
-       modal.style.display = "block";
-       document.getElementById("modalImg").src = a;
-    };
+        function changeImage(a) {
+           modal.style.display = "block";
+           document.getElementById("modalImg").src = a;
+        };
 
-    function changeCaption(id) {
-       var img = document.getElementById(id);
-          if (id === "o") {
-              document.getElementById("imgalt").innerHTML = " ";
-          }
-          else {
-              document.getElementById("imgalt").innerHTML = id;
-          }
-    };
+        function changeCaption(id) {
+           var img = document.getElementById(id);
+              if (id === "o") {
+                  document.getElementById("imgalt").innerHTML = " ";
+              }
+              else {
+                  document.getElementById("imgalt").innerHTML = id;
+              }
+        };
 
-    function close() {
-      console.log('closing');
-      modal.style.display = "none";
-    }
+        function close() {
+          console.log('closing');
+          modal.style.display = "none";
+        }
+    </script>
 
-</script>
 
   </body>
 </html>

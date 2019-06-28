@@ -286,3 +286,31 @@ div.flyers {
 div.modal-body {
   text-align: center;
 }
+
+div.showForm {
+    /* letter-spacing: 1.5px; */
+    font-size: 12px;
+    padding-bottom: 5%;
+    padding-top: 50%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 0px;
+    background-color: teal;
+    border: 1px solid teal;
+    color: white;
+    width: 100%;
+    margin-top: 5px;
+}
