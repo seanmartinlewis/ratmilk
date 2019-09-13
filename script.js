@@ -23,20 +23,21 @@ myApp.controller('ratmilk', ['$scope', '$firebaseArray', '$firebaseObject', func
         var shows = $firebaseArray(ref);
         shows.$watch(function () {
             angular.forEach(shows, function (show) {
-                show.dateData = new Date(show.dateData);
+                console.log('SHOW', show);
+                show.dateData = new Date(show.date);
                 if (today < show.dateData) {
                     show.display = true;
                 } else {
                     show.display = false;
                 }
-                console.log(show);
             })
             $scope.shows = shows;
         })
     }
 
     $scope.postShow = function() {
-        if (!$scope.data.date) {
+        console.log('adding show');
+        if (!$scope.data.newShow.date) {
             $scope.showTheForm = false;
             $scope.password = false;
             return;
@@ -46,7 +47,7 @@ myApp.controller('ratmilk', ['$scope', '$firebaseArray', '$firebaseObject', func
         var day = numbers[1];
         var year = numbers[2];
         $scope.data.newShow.dateData = year+'-'+month+'-'+day;
-
+        console.log($scope.data);
         var args = $scope.data.newShow;
         $scope.shows.$add(args);
     }
